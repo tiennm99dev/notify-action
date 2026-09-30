@@ -2,8 +2,8 @@
 
 A GitHub Action that sends notifications to various messaging platforms when your workflows run.
 
-![GitHub release](https://img.shields.io/github/v/release/tiennm99/notify-action)
-![GitHub](https://img.shields.io/github/license/tiennm99/notify-action)
+![GitHub release](https://img.shields.io/github/v/release/tiennm99dev/notify-action)
+![GitHub](https://img.shields.io/github/license/tiennm99dev/notify-action)
 
 ## Features
 
@@ -35,7 +35,7 @@ steps:
   # Your workflow steps here...
 
   - name: Send Notification
-    uses: tiennm99/notify-action@v1
+    uses: tiennm99dev/notify-action@v1
     with:
       platform: telegram
       telegram_bot_token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
@@ -60,7 +60,7 @@ steps:
 
 ```yaml
 - name: Notify on Success
-  uses: tiennm99/notify-action@v1
+  uses: tiennm99dev/notify-action@v1
   if: success()
   with:
     platform: telegram
@@ -74,7 +74,7 @@ steps:
 
 ```yaml
 - name: Notify with Custom Message
-  uses: tiennm99/notify-action@v1
+  uses: tiennm99dev/notify-action@v1
   with:
     platform: telegram
     message: "<b>Release v1.0.0</b> has been <i>deployed</i> to production! 🎉"
@@ -86,7 +86,7 @@ steps:
 
 ```yaml
 - name: Notify on Failure
-  uses: tiennm99/notify-action@v1
+  uses: tiennm99dev/notify-action@v1
   if: failure()
   with:
     platform: telegram
@@ -102,7 +102,7 @@ steps:
 
 ```bash
 # Clone the repository
-git clone https://github.com/tiennm99/notify-action.git
+git clone https://github.com/tiennm99dev/notify-action.git
 cd notify-action
 
 # Install dependencies
