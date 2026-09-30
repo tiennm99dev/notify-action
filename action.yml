@@ -7,16 +7,16 @@ branding:
 
 inputs:
   platform:
-    description: Messaging platform to use (telegram, discord, messenger)
+    description: Messaging platform to use (telegram, discord)
     required: true
     default: telegram
 
   message:
-    description: The message content to send
-    required: true
+    description: The message content to send. Defaults to a summary of the workflow run formatted for the platform.
+    required: false
 
   status:
-    description: The status of the workflow (success, failure, custom)
+    description: The status of the workflow (success, failure, cancelled, or any custom text). Pass job.status to report the real outcome.
     required: false
     default: success
 
@@ -28,6 +28,10 @@ inputs:
     description: Telegram Chat ID to send message to
     required: false
 
+  discord_webhook_url:
+    description: Discord channel webhook URL
+    required: false
+
 runs:
-  using: node20
+  using: node24
   main: dist/index.js
